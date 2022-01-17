@@ -3,7 +3,7 @@ import sys
 from game import Game
 
 display = None
-if sys.argv[1] == 'led':
+if len(sys.argv) > 1 and sys.argv[1] == 'led':
     from ledGameDisplay import LedGameDisplay
     display = LedGameDisplay()
 else:
