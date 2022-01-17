@@ -1,4 +1,5 @@
 import random
+import keyboard
 
 class Game:
 
@@ -13,3 +14,8 @@ class Game:
 
     def tick(self):
         self.gameDisplay.display(self)
+
+        if keyboard.is_pressed('d'):
+            self.manPos = self.manPos + 1
+        elif keyboard.is_pressed('a'):
+            self.manPos = self.manPos - 1    
