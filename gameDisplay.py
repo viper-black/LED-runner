@@ -5,6 +5,11 @@ class GameDisplay:
 
     def display(self, game):
         pass
+    
+    def displayGameOver(self):
+        pass
 
     def getSize(self):
         pass
+    
+    
