@@ -19,4 +19,4 @@ class ConsoleGameDisplay(GameDisplay):
                 sys.stdout.write('-')
 
     def getSize(self):
-        return 100
+        return 6
