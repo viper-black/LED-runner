@@ -23,8 +23,14 @@ class Game:
             self.manPos = self.size - 1
         if self.manPos == self.size:
             self.manPos = 0
+        if self.enemyPos > self.manPos:
+            self.enemyPos = self.enemyPos -1
+        if self.enemyPos < self.manPos:
+            self.enemyPos = self.enemyPos + 1
         if self.manPos == self.enemyPos:
             self.gameDisplay.displayGameOver()
             self.isOver = True
             return
         self.gameDisplay.display(self)
+
+            
