@@ -12,6 +12,6 @@ else:
 
 my_game = Game(display)
 
-while not my_game.isOver:
+while True:
     time.sleep(0.05)
     my_game.tick()

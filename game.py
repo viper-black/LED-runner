@@ -6,6 +6,9 @@ class Game:
     def __init__(self, gameDisplay):
         self.gameDisplay = gameDisplay
         self.size = gameDisplay.getSize()
+        self.initializeGame()
+        
+    def initializeGame(self):
         self.enemyPos = random.randrange(5, self.size)
         self.manPos = 0
         self.coinSpawn()
@@ -20,6 +23,9 @@ class Game:
 
 
     def tick(self):
+        if self.isOver and keyboard.is_pressed(' '):
+            self.initializeGame()
+        
         if keyboard.is_pressed('d'):
             self.manPos = self.manPos + 1
         elif keyboard.is_pressed('a'):
