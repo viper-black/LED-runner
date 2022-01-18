@@ -18,7 +18,7 @@ class ConsoleGameDisplay(GameDisplay):
             else:
                 sys.stdout.write('-')
                 
-    def displayGameOver(self):
+    def displayGameOver(self, game):
         print('Game over!')
 
     def getSize(self):

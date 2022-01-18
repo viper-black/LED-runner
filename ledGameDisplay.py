@@ -1,5 +1,6 @@
 from gameDisplay import GameDisplay
 from rpi_ws281x import *
+import time
 
 LED_COUNT      = 150      # Number of LED pixels.
 LED_PIN        = 18      # GPIO pin connected to the pixels (18 uses PWM!).
@@ -23,10 +24,12 @@ class LedGameDisplay(GameDisplay):
         self.strip.setPixelColor(game.coinPos, Color(247,215,9))
         self.strip.show()
         
-    def displayGameOver(self):
+    def displayGameOver(self, game):
         for idx in range(self.getSize()):
-            self.strip.setPixelColor(idx, Color(255,0,0))
-        self.strip.show()
+            time.sleep(0.001)
+            self.strip.setPixelColor(game.enemyPos + idx, Color(255,0,0))
+            self.strip.setPixelColor(game.enemyPos - idx, Color(255,0,0)) 
+            self.strip.show()
 
     def getSize(self):
         return LED_COUNT

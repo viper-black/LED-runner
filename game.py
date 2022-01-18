@@ -39,7 +39,7 @@ class Game:
         if self.enemyPos < self.manPos:
             self.enemyPos = self.enemyPos + 1
         if self.manPos == self.enemyPos:
-            self.gameDisplay.displayGameOver()
+            self.gameDisplay.displayGameOver(self)
             self.isOver = True
             return
         if self.manPos == self.coinPos:

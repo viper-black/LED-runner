@@ -6,7 +6,7 @@ class GameDisplay:
     def display(self, game):
         pass
     
-    def displayGameOver(self):
+    def displayGameOver(self, game):
         pass
 
     def getSize(self):
