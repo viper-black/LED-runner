@@ -6,12 +6,17 @@ class Game:
     def __init__(self, gameDisplay):
         self.gameDisplay = gameDisplay
         self.size = gameDisplay.getSize()
-        self.coinPos = random.randrange(1, self.size)
         self.enemyPos = random.randrange(5, self.size)
+        self.manPos = 0
+        self.coinSpawn()
+        self.isOver = False
+        self.points = 0
+        
+    def coinSpawn(self):
+        self.coinPos = random.randrange(1, self.size)
         while self.enemyPos == self.coinPos:
             self.coinPos = random.randrange(1, self.size)
-        self.manPos = 0
-        self.isOver = False
+        
 
 
     def tick(self):
@@ -31,6 +36,13 @@ class Game:
             self.gameDisplay.displayGameOver()
             self.isOver = True
             return
+        if self.manPos == self.coinPos:
+            self.coinSpawn()
+            self.points = self.points + 1
+            print(self.points)
         self.gameDisplay.display(self)
+        
+    
+        
 
             
